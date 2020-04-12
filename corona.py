@@ -11,6 +11,9 @@ from tkinter import messagebox
 
 ### GUI
 root=Tk()
+def get_html_data(url):
+    data=requests.get(url)
+    return data
 url = "https://www.mohfw.gov.in/"
 html_data=get_html_data(url)
 bs=bs4.BeautifulSoup(html_data.text,'html.parser')
